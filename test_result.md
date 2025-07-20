@@ -107,15 +107,18 @@ user_problem_statement: "Build a browser-based business process flow-editor with
 backend:
   - task: "BPMN Process CRUD API"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented complete BPMN process management API with endpoints for create, read, update, delete, and export BPMN processes. Added Process models with UUID support and MongoDB integration."
+      - working: true
+        agent: "testing"
+        comment: "Comprehensive testing completed successfully. All 14 test cases passed (100% success rate). Tested: GET /api/processes (list all), GET /api/processes/{id} (get specific), POST /api/processes (create), PUT /api/processes/{id} (update), DELETE /api/processes/{id} (delete), GET /api/processes/{id}/export (export BPMN XML). Verified UUID-based process IDs, proper CRUD operations, BPMN XML storage/retrieval, export functionality with correct XML headers, error handling (404 for non-existent processes, 422 for validation errors), and MongoDB integration. Edge cases tested include empty names, missing required fields, and large BPMN XML payloads. API is robust and handles BPMN workflow management effectively."
 
 frontend:
   - task: "BPMN Visual Editor with bpmn-js"
