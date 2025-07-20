@@ -1,38 +1,158 @@
-.App {
-    text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BPMN.js styles */
+.djs-palette {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.djs-palette .entry {
+  border-radius: 4px !important;
+  margin: 2px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.djs-palette .entry:hover {
+  background: #f3f4f6 !important;
+  border-color: #d1d5db !important;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.djs-palette .entry.highlighted {
+  background: #dbeafe !important;
+  border-color: #3b82f6 !important;
 }
 
-.App-link {
-    color: #61dafb;
+/* Canvas styles */
+.djs-container {
+  background: #fafafa !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Context pad styles */
+.djs-context-pad {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.djs-context-pad .entry {
+  border-radius: 4px !important;
+}
+
+.djs-context-pad .entry:hover {
+  background: #f3f4f6 !important;
+}
+
+/* Popup menu styles */
+.djs-popup {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.djs-popup .entry {
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+  font-size: 14px !important;
+}
+
+.djs-popup .entry:hover {
+  background: #f3f4f6 !important;
+}
+
+/* Element styles */
+.djs-element .djs-visual > :nth-child(1) {
+  fill: white !important;
+  stroke: #6b7280 !important;
+  stroke-width: 2px !important;
+}
+
+.djs-element.selected .djs-visual > :nth-child(1) {
+  stroke: #3b82f6 !important;
+  stroke-width: 3px !important;
+}
+
+/* Task element specific styles */
+.djs-element[data-element-id*="Task"] .djs-visual > :nth-child(1) {
+  fill: #fef3c7 !important;
+  stroke: #f59e0b !important;
+}
+
+/* Gateway element specific styles */
+.djs-element[data-element-id*="Gateway"] .djs-visual > :nth-child(1) {
+  fill: #fecaca !important;
+  stroke: #ef4444 !important;
+}
+
+/* Event element specific styles */
+.djs-element[data-element-id*="Event"] .djs-visual > :nth-child(1) {
+  fill: #d1fae5 !important;
+  stroke: #10b981 !important;
+}
+
+/* Sequence flow styles */
+.djs-connection .djs-visual > path {
+  stroke: #6b7280 !important;
+  stroke-width: 2px !important;
+}
+
+.djs-connection.selected .djs-visual > path {
+  stroke: #3b82f6 !important;
+  stroke-width: 3px !important;
+}
+
+/* Text styles */
+.djs-element .djs-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  fill: #374151 !important;
+}
+
+/* Minimap styles */
+.djs-minimap {
+  border: 1px solid #e5e7eb !important;
+  border-radius: 6px !important;
+  background: white !important;
+}
+
+/* Custom scrollbars */
+.djs-scrollable-contents::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.djs-scrollable-contents::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.djs-scrollable-contents::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.djs-scrollable-contents::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .djs-palette {
+    left: 10px !important;
+    top: 10px !important;
+  }
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
