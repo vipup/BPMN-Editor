@@ -11,7 +11,7 @@ from datetime import datetime
 import sys
 
 # Use the production backend URL from frontend/.env
-BACKEND_URL = "https://8859107b-036c-4e8b-aba6-bb1743187c25.preview.emergentagent.com/api"
+BACKEND_URL = "https://01580b9d-74f9-4d48-9e21-a724e07c5a02.preview.emergentagent.com/api"
 
 # Sample BPMN XML for testing
 SAMPLE_BPMN_XML = """<?xml version="1.0" encoding="UTF-8"?>
